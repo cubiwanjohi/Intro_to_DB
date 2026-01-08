@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS AUTHORS (
     author_name VARCHAR(215) NOT NULL
 );
 
+
 -- BOOKS TABLE
 CREATE TABLE IF NOT EXISTS BOOKS (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -21,7 +22,9 @@ CREATE TABLE IF NOT EXISTS BOOKS (
         ON DELETE CASCADE
 );
 
--- CUSTOMERS TABLE
+-- =====================================================
+-- Check for creation and implementation of Customers Table
+-- =====================================================
 CREATE TABLE IF NOT EXISTS CUSTOMERS (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(215) NOT NULL,
@@ -29,7 +32,9 @@ CREATE TABLE IF NOT EXISTS CUSTOMERS (
     address TEXT
 );
 
--- ORDERS TABLE
+-- =====================================================
+-- Check for creation and implementation of Orders Table
+-- =====================================================
 CREATE TABLE IF NOT EXISTS ORDERS (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -40,7 +45,9 @@ CREATE TABLE IF NOT EXISTS ORDERS (
         ON DELETE CASCADE
 );
 
--- ORDER_DETAILS TABLE
+-- =====================================================
+-- Check for creation and implementation of Order_Details Table
+-- =====================================================
 CREATE TABLE IF NOT EXISTS ORDER_DETAILS (
     orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
