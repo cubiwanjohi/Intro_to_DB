@@ -1,30 +1,16 @@
-#!/usr/bin/python3
-"""
-Creates the database alx_book_store in a MariaDB server.
-"""
+import mysql.connector
 
-import MySQLdb
+# Replace with your connection details
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="peter",
+    database="alx_database"
+)
 
-def create_database():
-    connection = None
-    try:
-        connection = MySQLdb.connect(
-            host="localhost",
-            user="root",
-            passwd="peter"
-        )
+mycursor = mydb.cursor()
+# Execute SQL statements using the execute() method on the cursor
 
-        cursor = connection.cursor()
-        cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store;")
-        print("Database 'alx_book_store' created successfully!")
-
-    except MySQLdb.Error as e:
-        print(f"Error while connecting to database: {e}")
-
-    finally:
-        if connection:
-            cursor.close()
-            connection.close()
-
-if __name__ == "__main__":
-    create_database()
+# Close connection to the databasse  
+mycursor.close()
+mydb.close()
