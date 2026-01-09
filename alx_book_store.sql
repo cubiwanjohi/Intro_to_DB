@@ -39,14 +39,9 @@ CREATE TABLE IF NOT EXISTS Order_Details (
     orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     book_id INT NOT NULL,
-    quantity INT NOT NULL,
-    CONSTRAINT fk_orderdetails_order
-        FOREIGN KEY (order_id)
-        REFERENCES Orders(order_id)
-        ON DELETE CASCADE,
-    CONSTRAINT fk_orderdetails_book
-        FOREIGN KEY (book_id)
-        REFERENCES Books(book_id)
-        ON DELETE CASCADE
+    quantity DOUBLE NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES Books(book_id) ON DELETE CASCADE
 );
+
 
